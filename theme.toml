@@ -7,7 +7,7 @@ licenselink = "https://github.com/juanwolf/calva/blob/master/LICENSE"
 description = "A simple site for your blog, a quick resume and no JS involved."
 homepage = "http://juanwolf.fr/"
 tags = ["blog", "resume", "cv", "perso", "minimal"]
-features = []
+features = ["org", "blog", "cv"]
 min_version = "0.41"
 
 [author]

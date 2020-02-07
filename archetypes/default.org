@@ -1,0 +1,10 @@
+#+title: "{{ replace .Name "-" " " | title }}"
+#+date: {{ .Date }}
+#+draft: true
+#+biography[]: https://juanwolf.fr
+
+Insert introduction here
+
+** My second title
+
+Some lovely text here

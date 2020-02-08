@@ -1,0 +1,12 @@
+<nav class="menu">
+    <a href="{{ $.Site.BaseURL }}">{{ $.Site.Params.LogoTitle}} </a>
+</nav>
+<nav class="breadcrumb">
+    <ul>
+        {{ range where .Site.Pages "RelPermalink" .Params.parent }}
+        <li>
+            <a href="{{ .Permalink }}">⇡ {{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>

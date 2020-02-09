@@ -1,0 +1,6 @@
+<article>
+    {{ partial "post/header" . }}
+    {{ if .Summary }}
+    {{- .Summary -}}
+    {{ end }}
+</article>

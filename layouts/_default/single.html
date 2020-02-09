@@ -3,14 +3,28 @@
 <article>
     <header>
         <h1>{{ .Title }}</h1>
-        <p class="date">{{ .Date }}</p>
+        {{ range .Translations }}
+        <li>
+            <a href="{{ .Permalink }}">{{ i18n (printf "read_%s" .Lang) }}: {{ .Title }}</a>
+        </li>
+        {{ end }}
+        <p>
+            <span class="date">{{ .Date.Format $.Site.Params.DateFormat }}</span>
+        </p>
+        {{ if .Params.Tags }}
         <span>Tags:</span>
         <ul>
             {{ range .Params.Tags }}
-            <li><a href="{{ $.Site.BaseURL }}/posts/tags/{{ . }}"> {{ . }}</a></li>
+            <li><a href="{{ $.Site.BaseURL }}/tags/{{ . }}"> {{ . }}</a></li>
             {{ end }}
         </ul>
+        {{ end }}
     </header>
+
+    <aside>
+        <h2>Table of Content</h2>
+        {{ .TableOfContents }}
+    </aside>
 
     <div class="content">
         {{ .Content }}

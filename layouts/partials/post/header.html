@@ -1,6 +1,6 @@
 <header>
     <h2>
-        <a href="{{.Permalink}}"> {{ .Params.emoji | emojify }} {{ .Title }}{{ if .IsPage }} - {{ .Lastmod.Format $.Site.Params.DateFormat }} {{ end }}</a>
+        <a href="{{.Permalink}}"> {{ .Params.emoji | emojify }} {{ .Title }}{{ if .IsPage }} - {{ .Lastmod.Format $.Site.Params.DateFormat | default "2006-01-02" }} {{ end }}</a>
     </h2>
     <ul>
     {{ range .Translations }}

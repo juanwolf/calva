@@ -9,7 +9,7 @@
         </li>
         {{ end }}
         <p>
-            <span class="date">{{ .Date.Format $.Site.Params.DateFormat }}</span>
+            <span class="date">{{ .Date.Format $.Site.Params.DateFormat | default "2006-01-02" }}</span>
         </p>
         {{ if .Params.Tags }}
         <span>Tags:</span>

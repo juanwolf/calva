@@ -1,2 +1,5 @@
 - id: read_fr
   translation: "Lire en français"
+
+- id: toc
+  translation: "Table of Content"

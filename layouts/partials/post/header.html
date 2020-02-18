@@ -1,12 +1,12 @@
 <header>
     <h2>
-        <a href="{{.Permalink}}"> {{ .Params.emoji | emojify }} {{ .Title }}{{ if .IsPage }} - {{ .Lastmod.Format $.Site.Params.DateFormat | default "2006-01-02" }} {{ end }}</a>
+        <a href="{{ .Permalink }}"> {{ .Params.emoji | emojify }} {{ .Title }}{{ if .IsPage }} - {{ .Lastmod.Format ($.Site.Params.DateFormat | default "2006-01-02") }} {{ end }}</a>
     </h2>
     <ul>
     {{ range .Translations }}
-    <li>
-        <a href="{{ .Permalink }}">{{ i18n (printf "read_%s" .Lang) }}: {{ .Title }}</a>
-    </li>
+        <li>
+            <a href="{{ .Permalink }}">{{ i18n (printf "read_%s" .Lang) }}: {{ .Title }}</a>
+        </li>
     {{ end }}
     </ul>
 </header>

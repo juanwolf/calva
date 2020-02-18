@@ -9,14 +9,20 @@
         </li>
         {{ end }}
         <p>
-            <span class="date">{{ .Date.Format $.Site.Params.DateFormat | default "2006-01-02" }}</span>
+            <span class="date">{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</span>
+            -
+            <span class="section"><a href="{{ $.Site.BaseURL}}/{{ .Section }}">{{ .Section }}</a></span>
+            -
+            <span class="tags">
+                {{ range .Params.Tags }}
+                <a href="{{ $.Site.BaseURL }}/tags/{{ . }}">#{{ . }}</a>
+                {{ end }}
+            </span>
         </p>
         {{ if .Params.Tags }}
         <span>Tags:</span>
         <ul>
-            {{ range .Params.Tags }}
-            <li><a href="{{ $.Site.BaseURL }}/tags/{{ . }}"> {{ . }}</a></li>
-            {{ end }}
+
         </ul>
         {{ end }}
     </header>

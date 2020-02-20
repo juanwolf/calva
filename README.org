@@ -7,3 +7,9 @@ Hugo theme used by https://uanwolf.fr or at lest will when I am sober.
 #+BEGIN_SRC bash
 make
 #+END_SRC
+
+** TODOs
+*** TODO Add RSS support
+*** TODO i18n categories link
+*** TODO Add more content in post summaries (section, etc...)
+*** TODO Add CSS

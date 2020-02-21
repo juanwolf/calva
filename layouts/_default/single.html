@@ -9,7 +9,7 @@
         </li>
         {{ end }}
         <p>
-            <span class="date">{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</span>
+            <time>{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</time>
             {{ if .Section }}
             -
             <span class="section"><a href="{{ $.Site.BaseURL}}/{{ .Section }}">{{ .Section }}</a></span>

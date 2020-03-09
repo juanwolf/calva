@@ -1,0 +1,22 @@
+<ul>
+    {{ range .Translations }}
+    <li>
+        <a href="{{ .Permalink }}">{{ i18n (printf "read_%s" .Lang) }}: {{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+<p>
+    <time>{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</time>
+    {{ if .Section }}
+    -
+    <span class="section"><a href="{{ $.Site.BaseURL}}{{ .Lang }}/{{ .Section }}">{{ .Section }}</a></span>
+    {{ end }}
+    {{ if .Params.Tags }}
+    -
+    <span class="tags">
+        {{ range .Params.Tags }}
+        <a href="{{ $.Site.BaseURL }}/tags/{{ . }}">#{{ . }}</a>
+        {{ end }}
+    </span>
+    {{ end }}
+</p>

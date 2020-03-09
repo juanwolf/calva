@@ -1,0 +1,13 @@
+<article class="post">
+    <header>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ partial "posts/extra_headers.html" . }}
+    </header>
+
+    {{ if .Summary }}
+    {{- .Summary -}}
+    {{ end }}
+    <footer>
+        <a href="{{ .Permalink }}"><nobr>{{ i18n "read_more" }} →</nobr></a>
+    </footer>
+</article>

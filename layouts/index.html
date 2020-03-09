@@ -1,8 +1,9 @@
 {{ define "main" }}
+
 <ul>
     {{ range .Site.RegularPages }}
     <li>
-        {{ partial "post-section" . }}
+        {{ .Render "summary" }}
     </li>
     {{ end }}
 </ul>

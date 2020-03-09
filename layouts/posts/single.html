@@ -1,9 +1,10 @@
 {{ define "main" }}
+
 <article>
-    <header>
-        <h1>{{ .Title }}</h1>
-        {{ partial "posts/extra_headers.html" . }}
-    </header>
+     <header>
+         <h1>{{ .Title }}</h1>
+         {{ partial "posts/extra_headers.html" . }}
+     </header>
     <aside>
         <h2>{{ i18n "toc" }}</h2>
         {{ .TableOfContents }}
@@ -15,4 +16,6 @@
 
     {{/* TODO: Add footer with webmentions  */}}
 </article>
+
+
 {{ end }}

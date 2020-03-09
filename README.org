@@ -1,6 +1,6 @@
 * Calva
 
-Hugo theme used by https://uanwolf.fr or at lest will when I am sober.
+Hugo theme used by https://juanwolf.fr or at lest will when I am sober.
 
 ** How to build
 
@@ -9,7 +9,8 @@ make
 #+END_SRC
 
 ** TODOs
-*** TODO Add RSS support
 *** TODO i18n categories link
 *** TODO Add more content in post summaries (section, etc...)
+*** TODO Add sections in menu (at least about page, tags and categories)
+*** TODO Add images in preview
 *** TODO Add CSS

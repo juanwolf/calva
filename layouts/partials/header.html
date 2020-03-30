@@ -3,11 +3,9 @@
         <li>
             <a href="{{ $.Site.BaseURL }}">{{ $.Site.Title }} </a>
         </li>
-        {{ with .OutputFormats.Get "rss" -}}
         <li>
-            <a href="{{ .Permalink }}">RSS</a>
+            <a href="{{ $.Site.BaseURL}}/{{ .Language.Lang }}/index.xml">RSS</a>
         </li>
-        {{ end -}}
     </ul>
 </nav>
 <nav class="breadcrumb">

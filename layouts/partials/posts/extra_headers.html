@@ -5,11 +5,11 @@
     </li>
     {{ end }}
 </ul>
-<p>
-    <time>{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</time>
-    {{ if .Section }}
+<p class="post-headers">
+    <span class="creation"><time>{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</time></span>
+    {{ if .Parent }}
     -
-    <span class="section"><a href="{{ $.Site.BaseURL}}{{ .Lang }}/{{ .Section }}">{{ .Section }}</a></span>
+    <span class="section"><a href="{{ .Parent.Permalink }}">{{ .Parent.Title }}</a></span>
     {{ end }}
     {{ if .Params.Tags }}
     -

@@ -1,3 +1,8 @@
 <footer>
+    <ul>
+        <li class="rss">
+            <a href="{{ $.Site.BaseURL}}/{{ .Language.Lang }}/index.xml">RSS</a>
+        </li>
+    </ul>
     <p>{{ $.Site.Author.name }} {{ $.Site.LastChange.Year }} {{ ":copyright:" | emojify }} {{ $.Site.Copyright | safeHTML }}</p>
 </footer>

@@ -1,21 +1,19 @@
 <nav class="menu">
     <ul>
-        <li>
+        <li class="title">
             <a href="{{ $.Site.BaseURL }}">{{ $.Site.Title }} </a>
         </li>
-        <li>
+        <li class="rss">
             <a href="{{ $.Site.BaseURL}}/{{ .Language.Lang }}/index.xml">RSS</a>
         </li>
     </ul>
 </nav>
 
-{{ if not .IsHome }}
 <nav class="breadcrumb">
-    <ol>
-        {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-    </ol>
+    {{ if not .IsHome }}
+    {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+    {{ end }}
 </nav>
-{{ end }}
 
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}

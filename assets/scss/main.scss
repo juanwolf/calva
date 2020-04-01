@@ -2,4 +2,85 @@
 
 body {
     background-color: $body-bg-color;
+    color: $body-font-color;
+    font-family: source sans pro,helvetica neue,Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu {
+    background-color: $main-nav-bg-color;
+    font-size: $site-title-font-size;
+    line-height: $menu-height;
+    //border-bottom-color: $body-font-color;
+    //border-bottom-width: 2px;
+    //border-bottom-style: solid;
+    padding: 0;
+    margin: 0;
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        white-space: unset;
+
+
+        li {
+            display: inline-block;
+            width: 45%;
+            text-align: center;
+        }
+
+        li.title {
+            font-weight: bold;
+        }
+    }
+}
+
+.breadcrumb {
+    background-color: $sub-nav-bg-color;
+    min-height: $menu-height/2;
+    line-height: $menu-height/2;
+    margin-bottom: 20px;
+}
+
+/*
+* Index section
+*/
+
+
+main ul.posts {
+    list-style-type: none;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    white-space: unset;
+
+    article {
+        background-color: $post-background-color;
+        color: $post-font-color;
+        text-align: justify;
+        padding: 2%;
+        margin-right: 0 auto;
+        margin-left: 0 auto;
+        margin-bottom: 20px;
+
+        header {
+            text-align: center;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: $body-font-color;
+        }
+
+        footer {
+            text-align: right;
+            a {
+            }
+        }
+
+
+    }
 }

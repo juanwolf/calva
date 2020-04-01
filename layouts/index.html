@@ -1,11 +1,12 @@
 {{ define "main" }}
 
-<ul>
-    {{ range .Site.RegularPages }}
-    <li>
-        {{ .Render "summary" }}
-    </li>
-    {{ end }}
-</ul>
-
+<main>
+    <ul class="posts">
+        {{ range .Site.RegularPages }}
+        <li>
+            {{ .Render "summary" }}
+        </li>
+        {{ end }}
+    </ul>
+<main>
 {{ end }}

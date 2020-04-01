@@ -6,3 +6,6 @@
 
 - id: read_more
   translation: "Read more"
+
+- id: words
+  translation: "words"

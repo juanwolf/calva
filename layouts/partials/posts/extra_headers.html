@@ -19,4 +19,12 @@
         {{ end }}
     </span>
     {{ end }}
+    -
+    <span class="words">
+        {{ .Content | countwords }} {{ i18n "words" }}
+    </span>
+    -
+    <span class="time">
+        {{ div (.Content | countwords)  200 }}min
+    </span>
 </p>

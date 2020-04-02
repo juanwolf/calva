@@ -62,32 +62,42 @@ body {
 main ul.posts {
     list-style-type: none;
     width: 70%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0;
     white-space: unset;
 
-    article {
-        background-color: $post-background-color;
-        color: $post-font-color;
-        text-align: justify;
-        padding: 2%;
-        margin-right: 0 auto;
-        margin-left: 0 auto;
-        margin-bottom: 20px;
 
-        header {
-            text-align: center;
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-bottom-color: $body-font-color;
-        }
+}
+article {
+    // background-color: $post-background-color;
+    color: $post-font-color;
+    text-align: justify;
+    padding: 2%;
+    margin-right: 0 auto;
+    margin-left: 0 auto;
+    margin-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #3c6382;
 
-        footer {
-            text-align: right;
-            a {
-            }
+    header {
+        text-align: center;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: $body-font-color;
+
+        a, a:visted {
+            color: black;
         }
+    }
+
+    footer {
+        text-align: right;
+        a {
+        }
+    }
+}
 
 
 main > footer {

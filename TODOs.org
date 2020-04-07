@@ -1,0 +1,13 @@
+* Nice to have
+** Twitter quote
+** Webmentions
+** Better fonts
+
+* v1.0.0
+** TODO SCSS [0/4]
+   - [ ] Footer
+   - [ ] code source (see http://localhost:1313/en/posts/programming/how-to-make-language-router/)
+   - [ ] bloc quote
+   - [ ] i18n link in post detail
+** TODO HTML [0/1]
+   - [ ] Tags link returning 404

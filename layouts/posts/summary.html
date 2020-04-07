@@ -4,9 +4,11 @@
         {{ partial "posts/extra_headers.html" . }}
     </header>
 
+    <div class="content">
     {{ if .Summary }}
     {{- .Summary -}}
     {{ end }}
+    </div>
     <footer>
         <a href="{{ .Permalink }}"><nobr>{{ i18n "read_more" }} →</nobr></a>
     </footer>

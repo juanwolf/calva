@@ -7,8 +7,18 @@ body {
     font-family: source sans pro,helvetica neue,Arial,sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.8;
 }
 
+a {
+    color: $main-nav-bg-color;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: $main-nav-bg-color;
+    text-decoration: underline;
+}
 
 .menu {
     background-color: $main-nav-bg-color;
@@ -52,15 +62,12 @@ body {
         color: white;
         font-weight: bold;
     }
-
 }
 
 /*
 * Index section
 */
-
-
-main ul.posts {
+main ul {
     list-style-type: none;
     width: 70%;
     max-width: 1000px;
@@ -68,25 +75,69 @@ main ul.posts {
     padding: 0;
     white-space: unset;
 
+    article {
+        padding: 0;
+        padding-bottom: 2%;
+        border-bottom: 1px solid lightgray;
+    }
+}
+
+// Section
+main > article {
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    header {
+        display: inline-block;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        width: 100%;
+        vertical-align: middle;
+
+        h1 {
+            width: 70%;
+            display: inline;
+        }
+        span {
+            width: 20%;
+            display: inline;
+        }
+    }
 
 }
+
 article {
     // background-color: $post-background-color;
     color: $post-font-color;
     text-align: justify;
-    padding: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
     margin-right: 0 auto;
     margin-left: 0 auto;
     margin-bottom: 20px;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    border-bottom-color: #3c6382;
+    @include breakpoint(large) {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     header {
         text-align: center;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom-color: $body-font-color;
+        padding-bottom: 2%;
+
+//        border-bottom-style: solid;
+//        border-bottom-width: 2px;
+//        border-bottom-color: #3c6382;
+
+        h1, h2 {
+            margin-bottom: 0;
+            font-weight: normal;
+            a, a:visited {
+                color: black;
+            }
+        }
+
         .post-meta {
             font-size: small;
             color: lighten($post-font-color, 75%);
@@ -98,6 +149,14 @@ article {
                 color: lighten($post-font-color, 75%);
             }
         }
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right:auto;
+        max-width: 100%;
+        height:auto;
     }
 
     footer {

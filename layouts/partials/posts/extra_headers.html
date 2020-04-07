@@ -1,12 +1,12 @@
-<ul>
+<ul class="post-meta">
     {{ range .Translations }}
     <li>
         <a href="{{ .Permalink }}">{{ i18n (printf "read_%s" .Lang) }}: {{ .Title }}</a>
     </li>
     {{ end }}
 </ul>
-<p class="post-headers">
-    <span class="creation"><time>{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</time></span>
+<p class="post-meta">
+    <span class="creation"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format ($.Site.Params.DateFormat | default "2006-01-02") }}</time></span>
     {{ if .Parent }}
     -
     <span class="section"><a href="{{ .Parent.Permalink }}">{{ .Parent.Title }}</a></span>

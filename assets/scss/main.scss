@@ -87,9 +87,16 @@ article {
         border-bottom-style: solid;
         border-bottom-width: 1px;
         border-bottom-color: $body-font-color;
+        .post-meta {
+            font-size: small;
+            color: lighten($post-font-color, 75%);
+            width: 100%;
+            text-align: center;
+            margin: 0;
 
-        a, a:visted {
-            color: black;
+            a, a:visited {
+                color: lighten($post-font-color, 75%);
+            }
         }
     }
 

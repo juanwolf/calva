@@ -1,10 +1,13 @@
 @import "./variables.scss";
 @import "./mixins.scss";
+@import "./highlight.scss";
 
 body {
     background-color: $body-bg-color;
     color: $body-font-color;
     font-family: source sans pro,helvetica neue,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
     line-height: 1.8;
@@ -20,13 +23,10 @@ a:visited {
     text-decoration: underline;
 }
 
-.menu {
+.menu, body > footer {
     background-color: $main-nav-bg-color;
     font-size: $site-title-font-size;
     line-height: $menu-height;
-    //border-bottom-color: $body-font-color;
-    //border-bottom-width: 2px;
-    //border-bottom-style: solid;
     padding: 0;
     margin: 0;
 
@@ -71,15 +71,19 @@ a:visited {
 main ul {
     list-style-type: none;
     width: 70%;
-    max-width: 1000px;
+    max-width: $index-list-max-width;
     margin: 0 auto;
     padding: 0;
     white-space: unset;
 
+    li:last-child article {
+        border-bottom: 0;
+    }
+
     article {
         padding: 0;
         padding-bottom: 2%;
-        border-bottom: 1px solid lightgray;
+        border-bottom: $post-border-bottom-size $post-border-bottom-style $post-border-bottom-color;
     }
 }
 
@@ -105,6 +109,9 @@ main > article {
         }
     }
 
+    ul {
+        width: 100%;
+    }
 }
 
 article {
@@ -127,27 +134,26 @@ article {
         text-align: center;
         padding-bottom: 2%;
 
-//        border-bottom-style: solid;
-//        border-bottom-width: 2px;
-//        border-bottom-color: #3c6382;
-
         h1, h2 {
             margin-bottom: 0;
             font-weight: normal;
-            a, a:visited {
-                color: black;
+            a {
+                color: $post-link-color;
+            }
+            a:visited {
+                color: $post-visited-link-color;
             }
         }
 
         .post-meta {
             font-size: small;
-            color: lighten($post-font-color, 75%);
+            color: $post-meta-font-color;
             width: 100%;
             text-align: center;
             margin: 0;
 
             a, a:visited {
-                color: lighten($post-font-color, 75%);
+                color: $post-meta-font-color;
             }
         }
     }

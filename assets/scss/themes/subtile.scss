@@ -1,7 +1,30 @@
 $body-bg-color: white;
-$sub-nav-bg-color: #F10C45;
+$body-font-color: black;
 $main-nav-bg-color: #0c2461 ;
-$body-font-color: #F5F5F5;
+$main-nav-font-color: white;
 
+$sub-nav-bg-color: #F10C45;
+$sub-nav-font-color: $main-nav-font-color;
+$sub-nav-font-weight: bold;
+
+// Post
 $post-background-color: $body-font-color;
 $post-font-color: black;
+$post-border-bottom-color: lightgray;
+$post-border-bottom-style: solid;
+$post-border-bottom-size: 1px;
+
+$post-meta-font-color: lighten($post-font-color, 75%);
+
+$post-link-color: black;
+$post-visited-link-color: black;
+
+$post-blockquote-background-color: #f9f9f9;
+$post-blockquote-border-left-color: #ccc;
+$post-blockquote-font-color: darken(#ccc, 15%);
+
+// Index
+
+// Section
+
+// Footer

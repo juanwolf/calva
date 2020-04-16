@@ -1,13 +1,14 @@
 * Nice to have
-** Twitter quote
-** Webmentions
-** Better fonts
+  - Twitter quote
+  - Webmentions
+  - Better fonts
+    Maybe Inter would be a nice font to set on the website.
 
 * v1.0.0
-** TODO SCSS [0/4]
-   - [ ] Footer
-   - [ ] code source (see http://localhost:1313/en/posts/programming/how-to-make-language-router/)
-   - [ ] bloc quote
-   - [ ] i18n link in post detail
+** TODO SCSS [4/4]
+   - [X] Footer
+   - [X] i18n link in post detail
+   - [X] code source (see http://localhost:1313/en/posts/programming/how-to-make-language-router/)
+   - [X] bloc quote
 ** TODO HTML [0/1]
    - [ ] Tags link returning 404

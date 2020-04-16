@@ -1,7 +1,13 @@
 <footer>
     <ul>
-        <li class="rss">
-            <a href="{{ $.Site.BaseURL}}/{{ .Language.Lang }}/index.xml">RSS</a>
+        {{ range $social_link := $.Site.Params.social }}
+        <li>
+
+            <a class="{{ $social_link.name }}" href="{{ $social_link.link }}">{{ $social_link.name  }}</a>
+        </li>
+        {{ end }}
+        <li>
+            <a class="rss" href="{{ $.Site.BaseURL}}/{{ .Language.Lang }}/index.xml"><i class="fas fa-rss"></i>RSS</a>
         </li>
     </ul>
     <p>{{ $.Site.Author.name }} {{ $.Site.LastChange.Year }} {{ ":copyright:" | emojify }} {{ $.Site.Copyright | safeHTML }}</p>

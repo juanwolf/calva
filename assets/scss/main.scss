@@ -70,11 +70,17 @@ a:visited {
 */
 main ul {
     list-style-type: none;
-    width: 70%;
-    max-width: $index-list-max-width;
     margin: 0 auto;
     padding: 0;
     white-space: unset;
+
+    @include breakpoint(small) {
+        width: 90%;
+    }
+    @include breakpoint(medium-large) {
+        width: 70%;
+        max-width: $index-list-max-width;
+    }
 
     li:last-child article {
         border-bottom: 0;
@@ -123,8 +129,9 @@ article {
     margin-right: 0 auto;
     margin-left: 0 auto;
     margin-bottom: 20px;
-    @include breakpoint(large) {
-        max-width: 700px;
+
+    @include breakpoint(medium-large) {
+        max-width: $post-max-width;
         margin-left: auto;
         margin-right: auto;
     }

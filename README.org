@@ -1,16 +1,32 @@
 * Calva
 
-Hugo theme used by https://juanwolf.fr or at lest will when I am sober.
+Hugo theme used by https://juanwolf.fr or at least will when I am sober. The aim is to have a fully functionnal theme without any use of JavaScript.
 
-** How to build
+** How to use
+   #+BEGIN_SRC bash
+   git submodule add https://github.com/juanwolf/calva
+   #+END_SRC
 
-#+BEGIN_SRC bash
-make
-#+END_SRC
+   In your website config file:
+   #+BEGIN_SRC yaml
+   theme: "calva"
+   #+END_SRC
 
-** TODOs
-*** TODO i18n categories link
-*** TODO Add more content in post summaries (section, etc...)
-*** TODO Add sections in menu (at least about page, tags and categories)
-*** TODO Add images in preview
-*** TODO Add CSS
+** Changelog
+*** v0.1.0
+    Inital release. Only blogs are supported.
+**** ✨ Features
+     - Syntax highlighting
+     - Breadcrumb
+     - Social media links in footer (see https://github.com/juanwolf/blog for an example)
+     - Blockquotes
+     - Table of content (not configurable yet)
+     - Responsive design
+** Nice to have
+   - Twitter quote
+   - Webmentions
+   - Better fonts
+     Maybe Inter would be a nice font to set on the website.
+
+** License
+   MIT License

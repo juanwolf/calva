@@ -126,8 +126,8 @@ article {
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 2%;
-    margin-right: 0 auto;
-    margin-left: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 20px;
 
     @include breakpoint(medium-large) {
@@ -173,6 +173,7 @@ article {
     }
 
     #TableOfContents ul {
+        width: auto;
         list-style-type: initial;
         margin: initial;
         padding: revert;

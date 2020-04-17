@@ -1,9 +1,43 @@
-<title>{{ .Title }}</title>
+<title>
+    {{ if .IsPage }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}
+</title>
+
 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
-<meta name="description" content="{{ $.Site.Params.description }}">
-<meta name="keywords" content="{{ $.Site.Params.keywords }}">
 
-{{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+{{- if .Description -}}
+<meta name="description" content="{{ .Description | safeHTML }}" />
+{{ else if .IsPage }}
+<meta name="description" content="{{ .Summary | plainify }}" />
+{{ else if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+{{- end -}}
+
+{{- if .Keywords -}}
+{{ $length := len .Keywords | add -1 -}}
+<meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+{{ else if .Site.Params.keywords }}
+{{ $length := len .Site.Params.keywords | add -1 -}}
+<meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+{{- end }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="{{ $.Site.Author.name }}"/>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo {{ hugo.Version }}" />
+
+<!-- favicon -->
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" />
+
+<!-- Permalink & RSSlink -->
+<link rel="canonical" href="{{ .Permalink }}" />
+{{ with .OutputFormats.Get "RSS" }}<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />{{ end }}
+<!-- Translations -->
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .Permalink  }}" />
+{{ end }}
+
+<!-- social-media -->
+{{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/opengraph.html" . }}

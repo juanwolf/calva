@@ -15,7 +15,7 @@
     -
     <span class="tags">
         {{ range .Params.Tags }}
-        <a href="{{ $.Site.BaseURL }}/tags/{{ . }}">#{{ . }}</a>
+        <a href="{{ $.Site.LanguagePrefix }}/tags/{{ . }}">#{{ . }}</a>
         {{ end }}
     </span>
     {{ end }}

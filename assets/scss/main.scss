@@ -49,6 +49,10 @@ a:visited {
 .menu ul li {
     text-align: left;
     padding-left: 5%;
+
+    .title {
+        font-size: 25px;
+    }
 }
 
 .breadcrumb {
@@ -129,6 +133,7 @@ article {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;
+    font-size: 18px;
 
     @include breakpoint(medium-large) {
         max-width: $post-max-width;
@@ -200,6 +205,11 @@ article {
         display: inline;
         font-style: italic;
         color: $post-blockquote-font-color;
+    }
+
+    .highlight {
+        margin-bottom: 10px;
+        font-size: 0.9em;
     }
 
     footer {

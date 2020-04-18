@@ -13,6 +13,12 @@ Hugo theme used by https://juanwolf.fr or at least will when I am sober. The aim
    #+END_SRC
 
 ** Changelog
+*** v0.1.1
+**** ✨ Features
+     - Add margin-bottom for code blocks
+**** 🐛 Fixes
+     - Increase font size in posts
+
 *** v0.1.0
     Inital release. Only blogs are supported.
 **** ✨ Features

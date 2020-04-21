@@ -7,7 +7,7 @@
         </li>
         {{ end }}
         <li>
-            <a class="rss" href="{{ $.Site.BaseURL}}/{{ .Language.Lang }}/index.xml"><i class="fas fa-rss"></i>RSS</a>
+            <a class="rss" href="{{ $.Site.LanguagePrefix }}/index.xml"><i class="fas fa-rss"></i>RSS</a>
         </li>
     </ul>
     <p>{{ $.Site.Author.name }} {{ $.Site.LastChange.Year }} {{ ":copyright:" | emojify }} {{ $.Site.Copyright | safeHTML }}</p>

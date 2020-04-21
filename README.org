@@ -4,7 +4,7 @@ Hugo theme used by https://juanwolf.fr or at least will when I am sober. The aim
 
 ** How to use
    #+BEGIN_SRC bash
-   git submodule add https://github.com/juanwolf/calva
+   git submodule add themes/calva https://github.com/juanwolf/calva
    #+END_SRC
 
    In your website config file:
@@ -13,6 +13,13 @@ Hugo theme used by https://juanwolf.fr or at least will when I am sober. The aim
    #+END_SRC
 
 ** Changelog
+*** v0.1.2
+**** 🐛 Fixes
+     - Remove font smoothing
+     - Fix linting issues
+     - Fix width overflow with inline code
+     - Fix RSS link in footer
+
 *** v0.1.1
 **** ✨ Features
      - Add margin-bottom for code blocks
@@ -28,6 +35,7 @@ Hugo theme used by https://juanwolf.fr or at least will when I am sober. The aim
      - Blockquotes
      - Table of content (not configurable yet)
      - Responsive design
+
 ** Nice to have
    - Twitter quote
    - Webmentions

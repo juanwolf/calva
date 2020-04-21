@@ -214,6 +214,14 @@ article {
     font-size: 0.9em;
   }
 
+  pre {
+     white-space: pre-wrap;
+     word-wrap: break-word;
+     &.chroma {
+         white-space: revert;
+     }
+  }
+
   footer {
     text-align: right;
   }

@@ -3,237 +3,241 @@
 @import "./highlight.scss";
 
 body {
-    background-color: $body-bg-color;
-    color: $body-font-color;
-    font-family: source sans pro,helvetica neue,Arial,sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.8;
+  background-color: $body-bg-color;
+  color: $body-font-color;
+  font-family: source sans pro, helvetica neue, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
 }
 
 a {
-    color: $main-nav-bg-color;
-    text-decoration: underline;
+  color: $main-nav-bg-color;
+  text-decoration: underline;
 }
 
 a:visited {
-    color: $main-nav-bg-color;
-    text-decoration: underline;
+  color: $main-nav-bg-color;
+  text-decoration: underline;
 }
 
-.menu, body > footer {
-    background-color: $main-nav-bg-color;
-    font-size: $site-title-font-size;
-    line-height: $menu-height;
-    padding: 0;
+.menu,
+body > footer {
+  background-color: $main-nav-bg-color;
+  font-size: $site-title-font-size;
+  line-height: $menu-height;
+  padding: 0;
+  margin: 0;
+
+  ul {
+    list-style-type: none;
+    width: 100%;
     margin: 0;
-
-    ul {
-        list-style-type: none;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        white-space: unset;
-
-
-    }
-    a, a:visited {
-        color: $main-nav-font-color;
-        text-decoration: none;
-        font-weight: bold;
-    }
+    padding: 0;
+    white-space: unset;
+  }
+  a,
+  a:visited {
+    color: $main-nav-font-color;
+    text-decoration: none;
+    font-weight: bold;
+  }
 }
 
 .menu ul li {
-    text-align: left;
-    padding-left: 5%;
+  text-align: left;
+  padding-left: 5%;
 
-    .title {
-        font-size: 25px;
-    }
+  .title {
+    font-size: 25px;
+  }
 }
 
 .breadcrumb {
-    background-color: $sub-nav-bg-color;
-    color: $sub-nav-font-color;
-    min-height: $menu-height/2;
-    line-height: $menu-height/2;
-    margin-bottom: 20px;
-    padding-left: 5%;
+  background-color: $sub-nav-bg-color;
+  color: $sub-nav-font-color;
+  min-height: $menu-height/2;
+  line-height: $menu-height/2;
+  margin-bottom: 20px;
+  padding-left: 5%;
 
-    a, a:visited {
-        color: $sub-nav-font-color;
-        font-weight: $sub-nav-font-weight;
-    }
+  a,
+  a:visited {
+    color: $sub-nav-font-color;
+    font-weight: $sub-nav-font-weight;
+  }
 }
 
 /*
 * Index section
 */
 main ul {
-    list-style-type: none;
-    margin: 0 auto;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  white-space: unset;
+
+  @include breakpoint(small) {
+    width: 90%;
+  }
+  @include breakpoint(medium-large) {
+    width: 70%;
+    max-width: $index-list-max-width;
+  }
+
+  li:last-child article {
+    border-bottom: 0;
+  }
+
+  article {
     padding: 0;
-    white-space: unset;
-
-    @include breakpoint(small) {
-        width: 90%;
-    }
-    @include breakpoint(medium-large) {
-        width: 70%;
-        max-width: $index-list-max-width;
-    }
-
-    li:last-child article {
-        border-bottom: 0;
-    }
-
-    article {
-        padding: 0;
-        padding-bottom: 2%;
-        border-bottom: $post-border-bottom-size $post-border-bottom-style $post-border-bottom-color;
-    }
+    padding-bottom: 2%;
+    border-bottom: $post-border-bottom-size $post-border-bottom-style
+      $post-border-bottom-color;
+  }
 }
 
 // Section
 main > article {
-    padding-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  header {
+    display: inline-block;
     margin-bottom: 0;
+    padding-bottom: 0;
+    width: 100%;
+    vertical-align: middle;
 
-    header {
-        display: inline-block;
-        margin-bottom: 0;
-        padding-bottom: 0;
-        width: 100%;
-        vertical-align: middle;
-
-        h1 {
-            width: 70%;
-            display: inline;
-        }
-        span {
-            width: 20%;
-            display: inline;
-        }
+    h1 {
+      width: 70%;
+      display: inline;
     }
-
-    ul {
-        width: 100%;
+    span {
+      width: 20%;
+      display: inline;
     }
+  }
+
+  ul {
+    width: 100%;
+  }
 }
 
 article {
-    // background-color: $post-background-color;
-    color: $post-font-color;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 2%;
-    margin-right: auto;
+  // background-color: $post-background-color;
+  color: $post-font-color;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  font-size: 18px;
+
+  @include breakpoint(medium-large) {
+    max-width: $post-max-width;
     margin-left: auto;
-    margin-bottom: 20px;
-    font-size: 18px;
+    margin-right: auto;
+  }
 
-    @include breakpoint(medium-large) {
-        max-width: $post-max-width;
-        margin-left: auto;
-        margin-right: auto;
+  header {
+    text-align: center;
+    padding-bottom: 2%;
+
+    h1,
+    h2 {
+      margin-bottom: 0;
+      font-weight: normal;
+      a {
+        color: $post-link-color;
+      }
+      a:visited {
+        color: $post-visited-link-color;
+      }
     }
 
-    header {
-        text-align: center;
-        padding-bottom: 2%;
+    .post-meta {
+      font-size: small;
+      color: $post-meta-font-color;
+      width: 100%;
+      text-align: center;
+      margin: 0;
 
-        h1, h2 {
-            margin-bottom: 0;
-            font-weight: normal;
-            a {
-                color: $post-link-color;
-            }
-            a:visited {
-                color: $post-visited-link-color;
-            }
-        }
-
-        .post-meta {
-            font-size: small;
-            color: $post-meta-font-color;
-            width: 100%;
-            text-align: center;
-            margin: 0;
-
-            a, a:visited {
-                color: $post-meta-font-color;
-            }
-        }
+      a,
+      a:visited {
+        color: $post-meta-font-color;
+      }
     }
+  }
 
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right:auto;
-        max-width: 100%;
-        height:auto;
-    }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+  }
 
-    #TableOfContents ul {
-        width: auto;
-        list-style-type: initial;
-        margin: initial;
-        padding: revert;
-    }
+  #TableOfContents ul {
+    width: auto;
+    list-style-type: initial;
+    margin: initial;
+    padding: revert;
+  }
 
-    blockquote {
-        background: $post-blockquote-background-color;
-        border-left: 10px solid $post-blockquote-border-left-color;
-        margin: 1.5em 10px;
-        padding: 0.5em 10px;
-        quotes: "\201C""\201D""\2018""\2019";
-    }
+  blockquote {
+    background: $post-blockquote-background-color;
+    border-left: 10px solid $post-blockquote-border-left-color;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
 
-    blockquote:before {
-        color: $post-blockquote-border-left-color;
-        content: open-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        margin-right: 0.25em;
-        vertical-align: -0.4em;
-    }
+  blockquote:before {
+    color: $post-blockquote-border-left-color;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
 
-    blockquote p {
-        display: inline;
-        font-style: italic;
-        color: $post-blockquote-font-color;
-    }
+  blockquote p {
+    display: inline;
+    font-style: italic;
+    color: $post-blockquote-font-color;
+  }
 
-    .highlight {
-        margin-bottom: 10px;
-        font-size: 0.9em;
-    }
+  .highlight {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+  }
 
-    footer {
-        text-align: right;
-    }
+  footer {
+    text-align: right;
+  }
 }
 
 // Footer
 body > footer {
-    text-align: center;
-    padding-top: 5px;
-    margin-top: 30px;
-    color: $main-nav-font-color;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 30px;
+  color: $main-nav-font-color;
 
-    ul {
-        display: inline-block;
-        li {
-            display: inline-block;
-            padding-left: 0;
-            text-align: center;
-            max-width: 100px;
-            width: 100%
-        }
+  ul {
+    display: inline-block;
+    li {
+      display: inline-block;
+      padding-left: 0;
+      text-align: center;
+      max-width: 100px;
+      width: 100%;
     }
+  }
 
-    p {
-        margin-bottom: 0;
-    }
+  p {
+    margin-bottom: 0;
+  }
 }

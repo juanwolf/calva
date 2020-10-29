@@ -13,6 +13,11 @@ Hugo theme used by https://juanwolf.fr or at least will when I am sober. The aim
    #+END_SRC
 
 ** Changelog
+
+*** v0.1.3
+**** 🐛 Fixes
+     - Increase contrast on post meta data
+
 *** v0.1.2
 **** 🐛 Fixes
      - Remove font smoothing
